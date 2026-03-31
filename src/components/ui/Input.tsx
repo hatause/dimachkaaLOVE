@@ -1,23 +1,37 @@
+'use client';
 import React from 'react';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    label: string;
+  label: string;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-    ({ label, className = '', ...props }, ref) => {
-        return (
-            <div className="flex flex-col space-y-2 w-full">
-                <label className="text-sm font-medium text-zinc-300 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                    {label}
-                </label>
-                <input
-                    ref={ref}
-                    className={`flex h-11 w-full rounded-md border border-zinc-800 bg-zinc-900/50 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 focus-visible:border-indigo-500 disabled:cursor-not-allowed disabled:opacity-50 transition-all ${className}`}
-                    {...props}
-                />
-            </div>
-        );
-    }
+  ({ label, className = '', ...props }, ref) => {
+    return (
+      <div className="flex flex-col space-y-1.5 w-full">
+        <label className="text-[13px] font-medium tracking-wide uppercase" style={{ color: 'var(--text-secondary)' }}>
+          {label}
+        </label>
+        <input
+          ref={ref}
+          className={`flex h-12 w-full rounded-xl px-4 py-2.5 text-sm transition-all duration-200 outline-none ${className}`}
+          style={{
+            backgroundColor: 'rgba(13, 34, 25, 0.8)',
+            border: '1px solid var(--border-color)',
+            color: 'var(--text-primary)',
+          }}
+          onFocus={(e) => {
+            e.currentTarget.style.borderColor = 'var(--accent)';
+            e.currentTarget.style.boxShadow = '0 0 0 3px rgba(52, 211, 153, 0.1)';
+          }}
+          onBlur={(e) => {
+            e.currentTarget.style.borderColor = 'var(--border-color)';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
+          {...props}
+        />
+      </div>
+    );
+  }
 );
 Input.displayName = 'Input';

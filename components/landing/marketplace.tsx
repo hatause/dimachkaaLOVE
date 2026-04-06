@@ -33,7 +33,7 @@ const listings = [
 
 export function Marketplace() {
   return (
-    <section className="relative py-20 sm:py-28 bg-secondary/30" id = "marketplace">
+    <section className="relative py-20 sm:py-28 bg-secondary/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">

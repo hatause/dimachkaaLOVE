@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { IPChainLogo } from "@/components/ipchain-logo"
-import {Header} from "@/components/user/header"
 import { 
   Search, 
   Filter, 
@@ -117,8 +116,38 @@ export default function MarketplacePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
+      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <Link href="/marketplace">
+              <IPChainLogo size="sm" />
+            </Link>
+            
+            <nav className="hidden md:flex items-center gap-8">
+              <Link href="/marketplace" className="text-sm text-foreground font-medium">
+                Маркетплейс
+              </Link>
+              <Link href="/auth/login" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Вход
+              </Link>
+              <Link href="/auth/register" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                Регистрация
+              </Link>
+            </nav>
 
-      <Header/>
+            <div className="flex items-center gap-3">
+              <Button variant="ghost" asChild className="hidden sm:inline-flex">
+                <Link href="/auth/login">Войти</Link>
+              </Button>
+              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Link href="/auth/register">
+                  Создать аккаунт
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </header>
 
       {/* Page Content */}
       <main className="container mx-auto px-4 lg:px-8 py-8">

@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { IPChainLogo } from "@/components/ipchain-logo"
 import { Loader2, Wallet, Eye, EyeOff } from "lucide-react"
-import {redirect} from "next/navigation";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
@@ -22,9 +21,6 @@ export default function LoginPage() {
     setIsLoading(true)
     await new Promise(resolve => setTimeout(resolve, 1500))
     setIsLoading(false)
-
-
-    redirect("/marketplace")
   }
 
   const handleWalletConnect = async () => {

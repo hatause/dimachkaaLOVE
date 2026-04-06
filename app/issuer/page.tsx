@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { IPChainLogo } from "@/components/ipchain-logo"
-import {Header} from "@/components/user/header";
 import { 
   Plus, 
   FileText, 
@@ -93,8 +92,39 @@ export default function IssuerDashboardPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-
-      <Header/>
+      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex h-16 items-center justify-between">
+            <div className="flex items-center gap-8">
+              <Link href="/">
+                <IPChainLogo size="sm" />
+              </Link>
+              
+              <nav className="hidden md:flex items-center gap-6">
+                <Link href="/issuer" className="text-sm text-foreground font-medium">
+                  Дашборд
+                </Link>
+                <Link href="/marketplace" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Маркетплейс
+                </Link>
+                <Link href="/portfolio" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  Портфель
+                </Link>
+              </nav>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <Button variant="outline" size="sm" className="border-border">
+                <Wallet className="h-4 w-4 mr-2" />
+                7xKX...gAsU
+              </Button>
+              <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                <span className="text-sm font-medium text-primary">ИИ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
 
       <main className="container mx-auto px-4 lg:px-8 py-8 mt-20">
         {/* Page Header */}

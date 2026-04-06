@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Shield } from "lucide-react"
-import {IPChainLogo} from "@/components/ipchain-logo";
 
 const footerLinks = {
   platform: [
@@ -37,7 +36,10 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-              <IPChainLogo/>
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/20">
+                <Shield className="h-5 w-5 text-primary" />
+              </div>
+              <span className="text-xl font-semibold text-foreground">VeriMint</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Платформа для верификации и токенизации интеллектуальной собственности на блокчейне Solana.

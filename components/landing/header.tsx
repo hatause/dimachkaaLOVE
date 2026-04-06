@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Shield, Menu, X } from "lucide-react"
 import { useState } from "react"
+import {IPChainLogo} from "@/components/ipchain-logo";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -13,10 +14,8 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/20">
-            <Shield className="h-5 w-5 text-primary" />
-          </div>
-          <span className="text-xl font-semibold text-foreground">VeriMint</span>
+          <IPChainLogo/>
+          {/*<span className="text-xl font-semibold text-foreground">IPChain</span>*/}
         </Link>
 
         {/* Desktop Navigation */}
@@ -27,7 +26,7 @@ export function Header() {
           <Link href="#how-it-works" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             Как это работает
           </Link>
-          <Link href="/marketplace" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+          <Link href="#marketplace" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             Маркетплейс
           </Link>
           <Link href="#security" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
@@ -41,7 +40,7 @@ export function Header() {
             <Link href="/auth/login">Войти</Link>
           </Button>
           <Button asChild>
-            <Link href="/auth/register">Начать</Link>
+            <Link href="/auth/register">Создать Аккаунт</Link>
           </Button>
         </div>
 

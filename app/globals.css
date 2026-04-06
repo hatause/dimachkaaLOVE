@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+
+html{
+  scroll-behavior: smooth;
+}
+
 :root {
   /* VeriMint Dark Theme - Primary colors */
   --background: oklch(0.12 0.02 160);

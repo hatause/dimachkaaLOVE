@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { IPChainLogo } from "@/components/ipchain-logo"
+import {Header} from "@/components/user/header"
 import { 
   ArrowLeft, 
   ExternalLink, 
@@ -54,26 +55,7 @@ export default function ListingDetailPage({ params }: { params: Promise<{ listin
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            <Link href="/marketplace">
-              <IPChainLogo size="sm" />
-            </Link>
-            
-            <div className="flex items-center gap-3">
-              <Button variant="ghost" asChild className="hidden sm:inline-flex">
-                <Link href="/auth/login">Войти</Link>
-              </Button>
-              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                <Link href="/auth/register">
-                  Создать аккаунт
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header/>
 
       <main className="container mx-auto px-4 lg:px-8 py-8">
         {/* Back link */}
